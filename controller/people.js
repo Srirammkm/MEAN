@@ -10,6 +10,11 @@ const postPeople = (req, res) => {
     if (!name){
         res.status(400).json({success: false, msg: 'please give input'})
     }
+    const data = {
+        id: people.length + 1,
+        name: name
+    }
+    people.push(data)
     res.status(200).json({success: true})
 }
 
